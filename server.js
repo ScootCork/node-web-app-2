@@ -2,6 +2,7 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.PORT || 3000;
 
 var app = express(); // no argument, settings are done else where
 
@@ -61,6 +62,6 @@ app.get('/test/*', (req, res) => {
   res.send(req.params);
 });
 
-app.listen(4000, () => {
-  console.log('Server is up on port 4000');
+app.listen(port, () => {
+  console.log(`Server is up and running on port ${port}`);
 });

@@ -21,11 +21,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// app.use((req, res, next) => {
-//   res.render('maintenance');
-// });
-
-
 // server static content
 app.use(express.static(__dirname + '/public')); //takes absolute path to folder
 
@@ -37,6 +32,12 @@ hbs.registerHelper('getCurrentYear', () => {
 hbs.registerHelper('screamIt', (text) => {
   return text.toUpperCase();
 });
+
+app.get('/projects', (req, res) => {
+  res.render('projects', {
+
+  });
+})
 
 app.get('/', (req, res) => {
   res.render('home', {
